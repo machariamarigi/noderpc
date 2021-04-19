@@ -15,17 +15,17 @@ function proc(container) {
             let _obj = clone(obj)
 
             if(!_obj.id) {
-                _obj.id = (Math.random(), * 10000000) | 0
+                _obj.id = (Math.random() * 10000000) | 0
             }
 
             container[_obj.id.toString()] = _obj
 
             return clone(_obj)
-        }
+        },
 
-        fetch(id) {
+        fetchUser(id) {
             return clone(container[id.toString()])
-        }
+        },
 
         fetchAll() {
             let _bunch = []
@@ -34,7 +34,7 @@ function proc(container) {
             }
 
             return _bunch
-        }
+        },
 
         unset(id) {
             delete container[id]
